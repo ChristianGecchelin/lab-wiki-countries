@@ -37,17 +37,13 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* {countries && <CountriesList countries={countries} getParam={getParam} />} */}
+      {countries && <CountriesList countries={countries} getParam={getParam} />}
 
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
           path="/countries-list"
-          element={
-            countries && (
-              <CountriesList countries={countries} getParam={getParam} />
-            )
-          }
+          element={<CountriesList countries={countries} getParam={getParam} />}
         />
 
         <Route

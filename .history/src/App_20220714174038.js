@@ -1,0 +1,30 @@
+import './App.css';
+
+import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+import HomePage from './pages/HomePage';
+import Navbar from './components/Navbar';
+import CountriesList from './pages/CountriesList';
+import CountryDetail from './pages/CountryDetail';
+/* import countries from './countries.json'; */
+function App() {
+  const [countries, setCountries] = useState(null);
+  return (
+    <div className="App">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/countries-list"
+          element={<CountriesList countries={countries} />}
+        />
+        <Route
+          path="/countries/:alpha3Code"
+          element={<CountryDetail countries={countries} />}
+        />
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
